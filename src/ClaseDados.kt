@@ -1,8 +1,18 @@
 import kotlin.random.Random
 
 class Dado {
-    private var numMin = 0
-    private var numMax = 10
+    private var numMin = 1
+    private var numMax = 6
+
+    constructor() {
+
+    }
+
+    constructor(numMin: Int, numMax: Int) {
+        this.numMin = numMin
+        this.numMax = numMax
+    }
+
 
     fun darValores(valMin: Int, valMax: Int) {
         if (valMin <= valMax) {
@@ -26,4 +36,6 @@ class Dado {
         println("num2 = $num2")
         return if (num1 == num2) num1 * num2 else num1 + num2
     }
+
+
 }
