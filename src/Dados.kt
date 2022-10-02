@@ -11,16 +11,27 @@ fun main() {
 
         Jugadores[cont].id=cont+1
 
-        println(Jugadores[cont].id)
-
     }
 
+        for (cont in 0..99){
+            for(cont2 in 0..99){
+                Jugadores[cont].puntos = Jugadores[cont].puntos + dado1.tiradaUnica();
+                Jugadores[cont].puntos = Jugadores[cont].puntos + dado2.tiradaUnica();
+                Jugadores[cont].puntos = Jugadores[cont].puntos + dado3.tiradaUnica();
+            }
 
-
-
-
+        }
+        //Esta es la funcion que ordena de mayor a menor y lo imprime por pantalla , no pongo que devuelva un string por que es mejor que lo impima directamente, ya que de la otra manera solo te devuelve el id de la posicon donde esta en el array
+        mostrarResultado(Jugadores)
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -71,5 +82,27 @@ class Jugador{
      var puntos=0
 
 
+}
+fun mostrarResultado(jugadores : List<Jugador>) {
+
+
+    var tmp = 0
+    var tmp2 = 0
+    for(x in 0..99) {
+        for(y in 0..99) {
+            if(jugadores[x].puntos > jugadores[y].puntos) {
+                tmp = jugadores[x].puntos
+                tmp2 = jugadores[x].id
+                jugadores[x].puntos = jugadores[y].puntos
+                jugadores[x].id = jugadores[y].id
+                jugadores[y].puntos = tmp
+                jugadores[y].id = tmp2
+            }
+        }
+    }
+
+    for (a in 0..99){
+        println("El jugador ${jugadores[a].id} tiene ${jugadores[a].puntos}")
+    }
 
 }
