@@ -66,6 +66,8 @@ class Jugador{
 
 
 }
+
+//Funcion MostrarResultado
 fun mostrarResultado(jugadores : List<Jugador>) {
 
 
