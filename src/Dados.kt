@@ -4,7 +4,7 @@ fun main() {
     val dado1 = Dado(1,3)
     val dado2 = Dado(4,6)
     val dado3 = Dado()
-    val Jugadores = List(100) {Jugador()}
+    var Jugadores = List(100) {Jugador()}
     var cont = 0
 
     for(cont in 0..99){
@@ -22,7 +22,7 @@ fun main() {
 
         }
         //Esta es la funcion que ordena de mayor a menor y lo imprime por pantalla , no pongo que devuelva un string por que es mejor que lo impima directamente, ya que de la otra manera solo te devuelve el id de la posicon donde esta en el array
-        mostrarResultado(Jugadores)
+        println(mostrarResultado(Jugadores))
 
 }
 
@@ -64,14 +64,14 @@ class Jugador{
      var id = 0
      var puntos=0
     override fun toString(): String {
-        return "El jugador $id, tiene $puntos puntos"
+        return "El jugador $id, tiene $puntos puntos\n"
     }
 
 
 }
 
 //Funcion MostrarResultado
-fun mostrarResultado(jugadores : List<Jugador>) {
+fun mostrarResultado(jugadores : List<Jugador>):String {
 
 
     var tmp = 0
@@ -89,8 +89,7 @@ fun mostrarResultado(jugadores : List<Jugador>) {
         }
     }
 
-    for (a in 0..99){
-        println(jugadores[a].toString())
-    }
+
+    return jugadores.toString()
 
 }
