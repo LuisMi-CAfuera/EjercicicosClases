@@ -63,6 +63,9 @@ class Dado {
 class Jugador{
      var id = 0
      var puntos=0
+    override fun toString(): String {
+        return "El jugador $id, tiene $puntos puntos"
+    }
 
 
 }
@@ -87,7 +90,7 @@ fun mostrarResultado(jugadores : List<Jugador>) {
     }
 
     for (a in 0..99){
-        println("El jugador ${jugadores[a].id} tiene ${jugadores[a].puntos}")
+        println(jugadores[a].toString())
     }
 
 }
